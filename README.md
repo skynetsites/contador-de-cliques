@@ -4,7 +4,7 @@ Este projeto é uma aplicação simples desenvolvida em React com o objetivo de 
 
 O desafio consiste em criar um contador que é incrementado toda vez que o usuário clica em um botão.
 
-Este projeto faz parte da **Trilha 3 – Trilha React | Fase 07 – Projeto de Certificação**, integrante do **Curso de Desenvolvimento Web da DEVStart**, em parceria com a **LAB365**.
+Este projeto faz parte da **Trilha 3 – Trilha React | Fase 08 – Projeto de Certificação**, integrante do **Curso de Desenvolvimento Web da DEVStart**, em parceria com a **LAB365**.
 
 ## Objetivo do Projeto
 
