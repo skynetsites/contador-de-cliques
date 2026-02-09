@@ -6,8 +6,6 @@ O desafio consiste em criar um contador que é incrementado toda vez que o usuá
 
 Este projeto faz parte da **Trilha 3 – Trilha React | Fase 07 – Projeto de Certificação**, integrante do **Curso de Desenvolvimento Web da DEVStart**, em parceria com a **LAB365**.
 
----
-
 ## Objetivo do Projeto
 
 Desenvolver uma aplicação React que:
@@ -17,8 +15,6 @@ Desenvolver uma aplicação React que:
 
 Este exercício é ideal para quem está dando os primeiros passos com React.
 
----
-
 ## Tecnologias Utilizadas
 
 - React
@@ -26,8 +22,6 @@ Este exercício é ideal para quem está dando os primeiros passos com React.
 - Vite
 - HTML5
 - CSS3
-
----
 
 ## Estrutura do Projeto
 
@@ -37,8 +31,6 @@ src/
 - App.tsx
 - main.tsx
 - index.css
-
----
 
 ## Requisitos Implementados
 
