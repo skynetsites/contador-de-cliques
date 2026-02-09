@@ -1,71 +1,73 @@
-# Desafio 1 – Contador de Cliques Básico
+# React + TypeScript + Vite
 
-Este projeto é uma aplicação simples desenvolvida em React com o objetivo de praticar os conceitos fundamentais da biblioteca, como componentes funcionais, estado (useState) e eventos.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-O desafio consiste em criar um contador que é incrementado toda vez que o usuário clica em um botão.
+Currently, two official plugins are available:
 
-Este projeto faz parte da **Trilha 3 – Trilha React | Fase 07 – Projeto de Certificação**, integrante do **Curso de Desenvolvimento Web da DEVStart**, em parceria com a **LAB365**.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Objetivo do Projeto
+## React Compiler
 
-Desenvolver uma aplicação React que:
-- Exiba um contador iniciado em zero
-- Possua um botão
-- Incremente o valor do contador a cada clique
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-Este exercício é ideal para quem está dando os primeiros passos com React.
+## Expanding the ESLint configuration
 
-## Tecnologias Utilizadas
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-- React
-- TypeScript
-- Vite
-- HTML5
-- CSS3
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-## Estrutura do Projeto
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-src/
-- components/
-  - Contador.tsx
-- App.tsx
-- main.tsx
-- index.css
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-## Requisitos Implementados
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-- Componente funcional Contador
-- Estado inicial do contador definido como 0
-- Uso do hook useState para controle de estado
-- Função de incremento acionada pelo evento onClick
-- Renderização do valor do contador na tela
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-## Como Executar o Projeto
-
-Pré-requisitos:
-- Node.js instalado
-
-Passos:
-
-1. Clone o repositório  
-git clone https://github.com/skynetsites/contador-de-cliques
-
-2. Acesse a pasta do projeto  
-cd contador-de-cliques
-
-3. Instale as dependências  
-npm install
-
-4. Execute a aplicação  
-npm run dev
-
-5. Acesse no navegador  
-http://localhost:5173
-
-## Observações Finais
-
-Este projeto tem fins **educacionais**, com foco no aprendizado e na prática de **React**, sem dependência de bibliotecas externas além das essenciais do próprio framework.
-
----
-
-Desenvolvido como Projeto de certificação do Desafio 1 - Contador de Cliques Básico da Trilha 3. Trilha React do Curso DEVStart.
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
